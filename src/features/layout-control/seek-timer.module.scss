@@ -1,0 +1,60 @@
+.timeDisplay {
+  padding: 10px 0 6px 0;
+}
+
+@font-face {
+  font-family: 'Digital-Classic';
+  src: url('../../fonts/DSEG7Classic-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.DigitalBPM {
+  padding: 7px 7px 4px 7px;
+  background-color: #121314;
+  font-family: 'Digital-Classic', sans-serif;
+  color: #02fad9;
+  font-size: 19px;
+  border-radius: 3px;
+}
+
+.DigitalTime {
+  padding: 7px 7px 4px 7px;
+  background-color: #121314;
+  font-family: 'Digital-Classic', sans-serif;
+  color: #02fad9;
+  font-size: 19px;
+  border-radius: 3px;
+}
+
+.DigitalMini {
+  padding: 3px 2px 2px 2px;
+  background-color: #000;
+  font-family: 'Digital-Classic', sans-serif;
+  color: #3b978b;
+  font-size: 12px;
+  border-radius: 3px;
+}
+
+.text {
+  transition: color 0s ease;
+}
+
+.flash {
+  animation: flash-animation 0.3s ease;
+}
+
+@keyframes flash-animation {
+  0% {
+    color: #ffffff;
+    /* text-shadow: 0 0 10px rgba(255, 0, 0, 0.8); */
+  }
+  100% {
+    color: inherit;
+    /* text-shadow: none; */
+  }
+}
+
+.seekBarWrapper {
+  height: 24px;
+}

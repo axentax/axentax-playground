@@ -1,0 +1,42 @@
+.flex {
+  display: flex;
+  // justify-content: left;
+  // align-items: center;
+  height: 50px;
+  padding-top: 12px;
+}
+
+.playPadding {
+  padding: 0 6px 6px 6px;
+}
+
+.commonPadding {
+  padding: 0 6px 6px 22px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  animation: spin 0.3s linear infinite;
+}
+
+.hoverHandle {
+  opacity: 0.5;
+}
+
+.hoverHandle:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.error {
+  opacity: 0.5;
+  color: rgba(255, 77, 0, 0.79);
+}

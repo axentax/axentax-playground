@@ -1,0 +1,148 @@
+.contents {
+  font-size: 12px;
+  width: 392px;
+}
+
+.nowrap {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.normalComment {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #555;
+}
+
+// .titleActive {
+//   animation: blink 0.2s ease-in-out 1;
+//   color: #02fad9;
+// }
+// .titleInactive {
+//   opacity: 0.5;
+// }
+
+.fullScreenActive {
+  padding-top: 4px;
+}
+
+.fullScreenInactive {
+  padding-top: 4px;
+}
+
+.headerRowWrapper {
+  display: flex;
+  position: relative;
+  font-size: 10px;
+  height: 15px;
+  box-sizing: border-box;
+}
+
+.displayRowWrapper {
+  display: flex;
+  box-sizing: border-box;
+
+  position: relative;
+}
+
+.bendRowWrapper {
+  height: 50px;
+  box-sizing: border-box;
+}
+
+.slideRowWrapper {
+  height: 50px;
+  box-sizing: border-box;
+}
+
+.messageRowWrapper {
+  height: 18px;
+  box-sizing: border-box;
+}
+
+.title {
+  font-weight: bold;
+  opacity: 0.5;
+}
+
+.location {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.symArea {
+  width: calc(100% - 100px);
+}
+
+.chordSymWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: #333;
+  color: #45a498;
+  box-sizing: border-box;
+  overflow: hidden;
+  width: calc(100% - 100px);
+  height: 80px;
+  padding-bottom: 20px;
+
+  // white-space: nowrap
+}
+
+// .overflowEllipsis {
+//   overflow: hidden;
+//   text-overflow: ellipsis;
+//   white-space: nowrap;
+// }
+
+.tabScoreWrapper {
+  background-color: #444;
+  box-sizing: border-box;
+  width: 100px;
+}
+
+.iconSymWrapper {
+  position: absolute;
+  bottom: 2px;
+  width: 292px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chordSymFont {
+  font-size: 22px;
+}
+.tabSymFont {
+  font-size: 18px;
+}
+.movedTab {
+  font-size: 12px;
+  position: absolute;
+  bottom: 20px;
+}
+
+.bendWrapper {
+  height: 100%;
+  background-color: #111;
+}
+
+.slideWrapper {
+  height: 100%;
+  background-color: #111;
+  border-top: 1px solid #333;
+}
+
+.messageWrapper {
+  height: 100%;
+  background-color: #222;
+  color: #777;
+  padding-left: 2px
+}

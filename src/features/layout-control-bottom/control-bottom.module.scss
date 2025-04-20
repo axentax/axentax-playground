@@ -1,0 +1,57 @@
+.controlBottom {
+  // padding: 0px 15px 5px 0px;
+  display: flex;
+  align-items: right;
+  justify-content: right;
+  position: relative;
+}
+
+.iconBase {
+  // font-size: 24px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  opacity: 0.75;
+  margin: 7px 0 5px 20px;
+}
+
+.iconBase:hover {
+  opacity: 1;
+}
+
+.iconBase.iconActive {
+  animation: pop 0.3s ease;
+}
+
+.iconBase.iconActiveRed {
+  animation: pop 0.3s ease;
+}
+
+.iconBase.iconInactive {
+  animation: shrink 0.3s ease;
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.5); }
+  100% { transform: scale(1); }
+}
+
+@keyframes shrink {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.75); }
+  100% { transform: scale(1); }
+}
+
+// .iconActive {
+// }
+
+// .iconActiveRed {
+// }
+
+.iconActiveColor {
+  color: #4caf50;
+}
+
+.iconActiveRedColor {
+  color: #d0603b;
+}

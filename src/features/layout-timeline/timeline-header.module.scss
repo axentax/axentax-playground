@@ -1,0 +1,44 @@
+.contents {
+  padding: 4px 0 4px 0;
+  font-size: 10px;
+  display: flex;
+  position: relative;
+}
+
+.title {
+  padding: 0 3px 0 0;
+  font-weight: bold;
+}
+
+.info {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.playActive {
+  animation: blink 0.2s ease-in-out 1;
+  color: #5da59b;
+}
+.playCompile {
+  animation: blink 1s infinite;
+  color: rgb(197, 197, 121);
+}
+.playInactive {
+  opacity: 0.5;
+}
+
+@keyframes blink {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.region {
+  padding: 0 3px 0 0;
+}
+
+.tick {
+  padding: 0 3px 0 0;
+}

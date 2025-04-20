@@ -1,0 +1,18 @@
+$dark-theme: (
+  body-background: #1e1e1e,
+  body-color: #888888,
+  body-color-bright: #dadada,
+  about-background: #1a4ba0,
+  about-color: #888888,
+  section: (
+    background: #1e1e1e,
+    color: 888888
+  ),
+  area: (
+    border-bottom: 1px solid #2e2e2e
+  ),
+  editorDecoration: (
+    playSym-color: rgb(255, 136, 0),
+    // playSym-color-back: rgb(0, 255, 128),
+  )
+);

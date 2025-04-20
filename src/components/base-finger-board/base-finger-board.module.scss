@@ -1,0 +1,56 @@
+.contents {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.flex {
+  display: flex;
+  justify-content: center; /* 水平方向の中央揃え */
+  position: relative;
+}
+
+.fretHeader {
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+}
+
+.fretBoard {
+  overflow-x: auto;
+  white-space: 'nowrap';
+}
+
+.hideScrollbar {
+  // overflow-x: hidden; /* 横スクロールバーを隠す */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.hideScrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.fretKeyColorRight,
+.fretKeyColorLeft,
+.stringNumberColorLeft {
+  fill: #aaa;
+}
+
+.fretKeyColorRight:hover {
+  fill: yellow;
+  opacity: 1 !important;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.fretKeyColorLeft:hover {
+  fill: yellow;
+  opacity: 1 !important;
+  cursor: pointer;
+}
+
+.stringNumberColorLeft:hover {
+  fill: yellow;
+  opacity: 1 !important;
+  cursor: pointer;
+}

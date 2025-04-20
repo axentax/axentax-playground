@@ -1,0 +1,83 @@
+@use "sass:map";
+@use 'light';
+@use 'dark';
+
+@function getVal($map, $keys...) {
+  @each $key in $keys {
+    $map: map.get($map, $key);
+    @if $map == null {
+      @warn "The key `#{$key}` was not found.";
+      @return null;
+    }
+  }
+  @return $map;
+}
+
+@mixin apply-theme($theme-map) {
+  background-color: getVal($theme-map, 'body-background');
+  color: getVal($theme-map, 'body-color');
+  .commonBG {
+    background-color: getVal($theme-map, 'body-background');
+  }
+  .commonColor {
+    color: getVal($theme-map, 'body-color');
+  }
+  .gl-brightColor {
+    color: getVal($theme-map, 'body-color-bright');
+  }
+  .gl-opacity1 {
+    opacity: 1
+  }
+  .about {
+    background-color: getVal($theme-map, 'about-background');
+    color: getVal($theme-map, 'about-color');
+  }
+  section {
+    background-color: getVal($theme-map, 'section', 'background');
+    color: getVal($theme-map, 'section', 'color');
+  }
+  .areaBorderTop {
+    border-top: getVal($theme-map, 'area', 'border-bottom');
+  }
+  .areaBorderBottom {
+    border-bottom: getVal($theme-map, 'area', 'border-bottom');
+  }
+  .decoration-playSym {
+    color: getVal($theme-map, 'editorDecoration', 'playSym-color');
+    // text-decoration: underline getVal($theme-map, 'editorDecoration', 'playSym-color-back');
+    // text-underline-offset: 3px;
+    font-weight: bold;
+  }
+  .decoration-playSym-back {
+    // color: getVal($theme-map, 'editorDecoration', 'playSym-color');
+    text-decoration: underline getVal($theme-map, 'editorDecoration', 'playSym-color');
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    // font-weight: bold;
+  }
+  // .glMiniDisplay {
+  //   background-color: #fff;
+  // }
+}
+
+// 各テーマ用のクラス
+.light {
+  @include apply-theme(light.$light-theme);
+}
+
+.dark {
+  @include apply-theme(dark.$dark-theme);
+}
+
+// テーマ共通のスタイル
+body {
+  // transition: background-color 2s, color 0.1s;
+  @include apply-theme(dark.$dark-theme);
+}
+
+.unSelectable {
+  -webkit-user-select: none; /* Safari 用 */
+  -moz-user-select: none; /* Firefox 用 */
+  -ms-user-select: none; /* IE 11 用 */
+  user-select: none; /* 標準構文 */
+}

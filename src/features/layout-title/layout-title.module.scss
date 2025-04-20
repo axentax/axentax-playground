@@ -1,0 +1,33 @@
+.layout {
+  display: flex;
+}
+
+.left {
+  flex: 1;
+  white-space: nowrap;
+
+  padding: 4px 0 0 12px;
+}
+
+.right {
+  width: 200px;
+  text-align: right;
+  margin: 4px 16px 4px 0;
+
+  display: flex;
+  justify-content: flex-end;
+
+  div {
+    margin-left: 16px;
+  }
+}
+
+.right a:link {
+  color: #888888;
+}
+
+.right a:link,
+.right a:visited {
+  color: #888888;
+}
+

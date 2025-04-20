@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon" />
+  <title>Axentax - Playground</title>
+  <!-- Primary Meta Tags -->
+  <meta name="description" content="Axentax-compilerを使ってギターフィンガリングを簡単に記述し、MIDIデータを生成・再生できるオンラインプレイグラウンドです。" />
+  <meta name="keywords" content="Axentax, ギター, MIDI, JavaScript, Axentax-compiler, ギターフィンガリング, DSL" />
+  <meta name="author" content="Mitsuru Yasuda" />
+  <link rel="canonical" href="https://axentax.github.io/axentax-playground/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Axentax🪓🔥 Playground" />
+  <meta property="og:description" content="Axentax-compilerを使ってギターフィンガリングを簡単に記述し、MIDIデータを生成・再生できるオンラインプレイグラウンドです。" />
+  <meta property="og:url" content="https://axentax.github.io/axentax-playground/" />
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/208019156?v=4" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Axentax🪓🔥 Playground" />
+  <meta name="twitter:description" content="Axentax-compilerを使ってギターフィンガリングを簡単に記述し、MIDIデータを生成・再生できるオンラインプレイグラウンドです。" />
+  <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/208019156?v=4" />
+
+  <!-- Prevent back navigation -->
+  <script type="text/javascript">
+    window.addEventListener('popstate', function (event) {
+      history.forward();
+    });
+  </script>
+
+  <!-- External Libraries & Styles -->
+  <script type="text/javascript" src="/assets/js/libfluidsynth-2.3.0.js?20250420"></script>
+  <link href="https://cdn.skypack.dev/sanitize.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>

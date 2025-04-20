@@ -1,0 +1,88 @@
+.contents {
+  display: flex;
+  background-color: #000;
+  width: 390px;
+  height: 60px;
+}
+
+.left {
+  background-color: #111;
+  height: 61px;
+}
+
+.right {
+  background-color: #111;
+  // height: 60px;
+}
+
+.row {
+  padding: 2px 0 0 0;
+  display: flex;
+  background-color: #111;  
+  height: 20px;
+  box-sizing: border-box;
+}
+
+.displayNoteWrapper {
+  display: flex;
+  width: 229px;
+  font-size: 12px;
+  font-family: Arial;
+  box-sizing: border-box;
+}
+.displayStepWrapper {
+  display: flex;
+  width: 229px;
+  font-size: 12px;
+  font-family: Arial;
+  box-sizing: border-box;
+}
+.displayMapWrapper {
+  display: flex;
+  width: 149px;
+  font-size: 12px;
+  font-family: Arial;
+  box-sizing: border-box;
+}
+
+.topKeyBox {
+  // width: 40px;
+  padding: 0 4px 0 3px;
+  color: #777;
+  // background-color: #333;
+}
+.topValueBox {
+  background-color: #000;
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+  padding-left: 4px;
+  font-family: Menlo;
+  text-align: left;
+  color: #45a498;
+}
+
+.displayIconWrapper {
+  display: flex;
+  // width: 40px;
+  font-size: 12px;
+  font-family: Arial;
+  box-sizing: border-box;
+
+  padding: 1px 3px 1px 2px;
+  margin-left: 2px;
+  // background-color: #333;
+  border-radius: 5px;
+}
+.iconBox {
+  // width: 40px;
+  padding: 0 0px 0 0px;
+  color: #777;
+  // background-color: #333;
+}
+.iconColorActive {
+  color: yellow;
+}
+.iconColorDeactive {
+  color: #777;
+}
