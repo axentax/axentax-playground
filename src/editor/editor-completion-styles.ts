@@ -55,6 +55,10 @@ const insertSingleList = [
     doc: ``
   },
   {
+    insert: 'staccato($1)',
+    doc: ``
+  },
+  {
     insert: 'degree(E melodic minor)',
     doc: ``
   },

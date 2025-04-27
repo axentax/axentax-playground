@@ -6,7 +6,7 @@ import { Platform, PlatformConfiguration } from '../../settings';
 import { Filer } from '../../@x-electron/filer/filer';
 import { FaGithub } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
-
+import { FaQuestionCircle } from "react-icons/fa";
 
 export const LayoutTitle = () => {
 
@@ -23,6 +23,9 @@ export const LayoutTitle = () => {
       </div>
       <div className={`${styles.right} commonBG`}>
         {/* status:{playStatus} _ username */}
+        <div>
+          <a href='https://axentax.github.io/docs/quick-start' target='_blank'><FaQuestionCircle size="22px" /></a>
+        </div>
         <div>
           <a href='https://github.com/axentax/axentax-playground' target='_blank'><FaGithub size="22px" /></a>
         </div>

@@ -105,9 +105,9 @@ export const LayoutLabo = () => {
       </div>
 
       <div className={styles.messageRowWrapper}>
-        <div className={styles.messageWrapper}>
-          Docs: https://
-        </div>
+        {/* <div className={styles.messageWrapper}>
+          Docs: <a href="https://axentax.github.io/">https://axentax.github.io/</a>
+        </div> */}
       </div>
     </div>
   )

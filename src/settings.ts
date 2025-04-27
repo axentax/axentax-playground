@@ -11,7 +11,7 @@ export enum Platform {
 
 export const PlatformConfiguration = {
   Platform: Platform.browser,
-  title: global.title + ' playground',
+  title: global.title + ' playground version1.0',
   assetsPath: './assets',
 
   defaultRightColumnWidth: 410 // 414

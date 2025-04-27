@@ -148,7 +148,7 @@ export const LayoutConsole: React.FC = React.memo(() => {
         </div>
 
         <footer className={`${styles.headerFooter} ${styles.footer}`}>
-          © 2025 AXENTAX.COM
+          Copyright © 2025 Axentax.
         </footer>
       </div>
 
