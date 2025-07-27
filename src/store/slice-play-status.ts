@@ -15,7 +15,7 @@ const initialState: PlayStatus = {
   status: PlayStatusEN.STOP
 }
 
-let startTime: number = 0;
+// let startTime: number = 0;
 
 export const playStatusSlice = createSlice({
   name: 'playStatus',
@@ -23,11 +23,11 @@ export const playStatusSlice = createSlice({
   reducers: {
     setPlayStatus: (state, action: PayloadAction<PlayStatusEN>) => {
 
-      if (action.payload === PlayStatusEN.COMPILE) startTime = new Date().getTime();
-      if (action.payload === PlayStatusEN.PLAY) {
-        // console.log('ctt:', (new Date().getTime() - startTime))
-        startTime = 0;
-      }
+      // if (action.payload === PlayStatusEN.COMPILE) startTime = new Date().getTime();
+      // if (action.payload === PlayStatusEN.PLAY) {
+      //   // console.log('ctt:', (new Date().getTime() - startTime))
+      //   startTime = 0;
+      // }
 
       state.status = action.payload;
     },

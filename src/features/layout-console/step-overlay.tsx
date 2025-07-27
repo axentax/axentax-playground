@@ -1,7 +1,7 @@
 import React from 'react'
 import { OnClickCallbackForOverlay, Overlay } from '../../components/overlay/overlay'
-import { XSynth } from '../../synth/x-synth';
-import { Platform, PlatformConfiguration } from '../../settings';
+// import { XSynth } from '../../synth/x-synth';
+// import { Platform, PlatformConfiguration } from '../../settings';
 
 interface Props {
   onClick?: OnClickCallbackForOverlay;

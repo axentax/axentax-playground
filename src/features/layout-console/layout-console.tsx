@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react'
-import { XSynth } from '../../synth/x-synth'
+// import { XSynth } from '../../synth/x-synth'
 import { useDispatch, useSelector } from 'react-redux'
 import { StrumEditor } from '../../editor/editor'
 import { ConsoleStepOverlay } from './step-overlay'
