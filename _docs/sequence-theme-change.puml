@@ -1,0 +1,18 @@
+' ライトダークテーマ変更フロー
+' 基点：src/theme/
+' 概要：ユーザーがライトダークテーマを変更してからUIに反映されるまでの流れ
+@startuml
+participant User as "ユーザー"
+participant ThemeButton as "features/layout-control-bottom/theme-changer.tsx\nThemeChanger"
+participant Store as "store/store.ts\nReduxStore"
+participant Theme as "theme/themes.ts\nThemes"
+participant LocalStorage as "repository/local-storage-repo.ts\nLSRepo"
+participant UI as "各UIコンポーネント"
+
+User -> ThemeButton: テーマ変更操作（onClick等）
+ThemeButton -> Store: dispatch(テーマ変更アクション)
+Store -> LocalStorage: saveItem(テーマ設定)
+Store -> Theme: apply()
+Theme -> UI: テーマ適用（CSS変数等）
+UI -> User: ライトダークテーマでUI表示
+@enduml 
