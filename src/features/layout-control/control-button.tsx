@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import store, { RootState } from '../../store/store';
-import { PlayStatusEN } from '../../store/slice-play-status';
+import { PlayStatusEN, setPlayStatus } from '../../store/slice-play-status';
 import { XSynth } from '../../synth/x-synth';
 import { useRegionJumpByControl } from './use-region-jump';
 import { EditorControl } from '../../editor/editor-control';
@@ -92,15 +92,29 @@ export const ControlButton: React.FC = React.memo(() => {
     }
   }
 
+  let synthInited = false;
+
   // ---
   // re compile && play
   // ---
   const reCompileButton = () => {
+    const dispatch = useDispatch();
+    
     if (versionMatched || syntaxError || playStatus === PlayStatusEN.COMPILE) {
       return renderMainControlButton()
     } else {
       return (<>
-        <div onClick={() => reCompilePlayCB()} className={`${styles.playPadding} ${styles.hoverHandle} gl-brightColor`}>
+        <div onClick={() => {
+          if (!synthInited) {
+            synthInited = true;
+            dispatch(setPlayStatus(PlayStatusEN.COMPILE));
+            XSynth.init(() => {
+              reCompilePlayCB()
+            });
+          } else {
+            reCompilePlayCB()
+          }
+        }} className={`${styles.playPadding} ${styles.hoverHandle} gl-brightColor`}>
           <SiCompilerexplorer size='20px' />
         </div>
 
@@ -124,7 +138,10 @@ export const ControlButton: React.FC = React.memo(() => {
     }
   }
   const reCompileWithPlay = () => {
-    if (!versionMatched && !syntaxError && playStatus !== PlayStatusEN.COMPILE) {
+    if (!XSynth.checkInstance()) {
+      alert("When starting the game, please click the play button first.")
+      return;
+    } else if (!versionMatched && !syntaxError && playStatus !== PlayStatusEN.COMPILE) {
       reCompilePlayCB()
     } else {
       playOrStop()

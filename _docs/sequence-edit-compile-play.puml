@@ -1,0 +1,48 @@
+' エディタ入力～コンパイル～再生フロー
+' 基点：src/editor/
+' 概要：エディタでsyntaxを入力し、コンパイル結果を受信し、再生ボタン押下で音が鳴るまでの一連の流れ
+@startuml
+participant User as "ユーザー"
+box "editor (src/editor/)" #LightGreen
+  participant Editor as "editor/Editor"
+  participant Completion as "editor/editor-completion.ts\nEditorCompletion"
+  participant Highlight as "editor/editor-highlight.ts\nEditorSyntaxHighlight"
+end box
+box "worker (src/worker-brancher/)" #LightYellow
+  participant Workers as "worker-brancher/compile-worker-executer.ts\nCompileWorkerExecutor"
+end box
+box "features (src/features/)" #LightBlue
+  participant Play as "features/PlayFeature (例)"
+end box
+box "synth (src/synth/)" #LightCyan
+  participant Synth as "synth/x-synth.ts\nXSynth"
+end box
+box "store (src/store/)" #LightGray
+  participant Store as "store/store.ts\nReduxStore"
+end box
+
+
+User -> Editor: 入力（onChange等）
+Editor -> Completion: requestCompletion()
+Editor -> Highlight: requestHighlight()
+Completion -> Workers: setMessage()（補完コンパイル）
+Highlight -> Workers: setMessage()（ハイライトコンパイル）
+Workers -> Completion: onmessage (補完結果)
+Workers -> Highlight: onmessage (ハイライト結果)
+Completion -> Editor: setCompletionItems()
+Highlight -> Editor: setHighlight()
+Editor -> Workers: setMessage()（全体コンパイル）
+Workers -> Editor: onmessage (コンパイル結果)
+alt コンパイル成功
+  Editor -> Store: removeSyntaxError(), clearErrorDecoration()
+else コンパイルエラー
+  Editor -> Store: setSyntaxError(), setErrorDecoration()
+end
+User -> Editor: 再生操作（onPlayClick等）
+Editor -> Play: playRequest()
+Play -> Store: getState(), getSettings()
+Play -> Workers: setMessage()（MIDI生成）
+Workers -> Play: onmessage (MIDIデータ返却)
+Play -> Synth: XSynth.play()
+Synth -> Store: setPlayStatus()
+@enduml 

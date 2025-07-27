@@ -1,0 +1,18 @@
+' BaseFingerBoardMini描画フロー
+' 基点：src/components/base-finger-board-mini/
+' 概要：ユーザー操作からBaseFingerBoardMiniが描画されるまでの流れ
+@startuml
+participant User as "ユーザー"
+participant Editor as "editor/Editor"
+participant Store as "store/store.ts\nReduxStore"
+participant Controller as "components/base-finger-board-mini/use-finger-board-mini-controller.ts\nuseFingerBoardMiniController"
+participant Board as "components/base-finger-board-mini/base-mini-board.tsx\nBaseFingerBoardMini"
+
+User -> Editor: 編集・選択操作
+Editor -> Store: dispatch(アクション)
+Store -> Controller: subscribe(必要な状態)
+Controller -> Store: getState(ノート情報, スケール, スタイル等)
+Controller -> Board: propsとしてデータ渡し
+Board -> Board: 描画処理（Reactレンダリング）
+Board -> User: 指板UIを表示
+@enduml 

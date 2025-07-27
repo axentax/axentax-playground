@@ -1,0 +1,43 @@
+' 再生（MIDI生成・サウンド再生）フロー（コンパイルorキャッシュ分岐）
+' 基点：src/hooks/use-play-observer.ts
+' 概要：再生ボタン押下時、コンパイルが必要かキャッシュMIDIを使うかの分岐を含めた流れ
+@startuml
+participant User as "ユーザー"
+box "editor (src/editor/)" #LightGreen
+  participant Editor as "editor/Editor"
+end box
+box "hooks (src/hooks/)" #LightBlue
+  participant PlayObserver as "hooks/use-play-observer.ts\nusePlayObserver"
+end box
+box "worker (src/worker-brancher/)" #LightYellow
+  participant Workers as "worker-brancher/compile-worker-executer.ts\nCompileWorkerExecutor"
+end box
+box "editorInstance (src/editor/)" #White
+  participant EditorInstanceStore as "editor/editor-instance-store.ts\nEditorInstanceStore"
+end box
+box "store (src/store/)" #LightGray
+  participant Store as "store/store.ts\nReduxStore"
+end box
+box "conduct (src/conduct/)" #White
+  participant ConductStore as "conduct/conduct-store.ts\nConductStore"
+end box
+box "synth (src/synth/)" #LightCyan
+  participant XSynth as "synth/x-synth.ts\nXSynth"
+end box
+
+User -> Editor: 再生操作（onPlayClick等）
+Editor -> PlayObserver: playCB()
+PlayObserver -> Store: getState(syntaxMatchVersion)
+alt バージョン一致（キャッシュMIDI利用）
+  PlayObserver -> ConductStore: getPlayObj()
+  PlayObserver -> XSynth: XSynth.play(midi from cache)
+  XSynth -> Store: setPlayStatus()
+else バージョン不一致（再コンパイル）
+  PlayObserver -> EditorInstanceStore: getEditor().editor.getValue()
+  PlayObserver -> Workers: setMessage()（MIDI生成）
+  Workers -> PlayObserver: onmessage (MIDIデータ返却)
+  PlayObserver -> ConductStore: setPlayObj()
+  PlayObserver -> XSynth: XSynth.play(midi from compile)
+  XSynth -> Store: setPlayStatus()
+end
+@enduml 

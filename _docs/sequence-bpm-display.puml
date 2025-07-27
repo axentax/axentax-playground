@@ -1,0 +1,16 @@
+' 再生時間・BPM表示フロー
+' 基点：src/features/layout-control/
+' 概要：再生中にBPMや再生時間を取得・表示するまでの流れ
+@startuml
+participant User as "ユーザー"
+participant XSynth as "synth/x-synth.ts\nXSynth"
+participant Store as "store/store.ts\nReduxStore"
+participant SeekTimer as "features/layout-control/seek-timer.tsx\nSeekTimer"
+
+User -> XSynth: 再生操作（onPlayClick等）
+XSynth -> Store: setPlayStatus(PLAY), setPlayTick(), setPlayBPM()
+Store -> SeekTimer: subscribe(playBPM, playTick, playStatus)
+SeekTimer -> Store: getState(playBPM, playTick, playStatus)
+SeekTimer -> SeekTimer: 計算（再生時間, BPM表示）
+SeekTimer -> User: 画面にBPM・再生時間を表示
+@enduml 

@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx ts-node:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(npm run test:*)",
+      "Bash(npm run:*)",
+      "mcp__ide__executeCode",
+      "Bash(mkdir:*)",
+      "WebFetch(domain:)",
+      "Bash(npm test:*)",
+      "Bash(node:*)",
+      "Bash(mv:*)",
+      "Bash(rg:*)",
+      "Bash(rm:*)",
+      "Bash(npx jest:*)",
+      "Bash(git rm:*)",
+      "Bash(ls:*)"
+    ],
+    "deny": []
+  }
+}

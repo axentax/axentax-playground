@@ -63,7 +63,7 @@ export const LayoutConsole: React.FC = React.memo(() => {
       {/* --- Overlay for Initialize --- */}
       
       {overlayLevel === 0 ? <ConsoleStepOverlay>🔥 initial console 🔥</ConsoleStepOverlay> : null}
-      {overlayLevel === 1 ? <ConsoleStepOverlay
+      {/* {overlayLevel === 1 ? <ConsoleStepOverlay
         backgroundColor='rgba(0, 0, 0, 0.75)'
         onClick={() => {
           setOverlayLevel(2);
@@ -71,7 +71,7 @@ export const LayoutConsole: React.FC = React.memo(() => {
         }}>
           🔥 Click to Start 🔥
         </ConsoleStepOverlay> : null}
-      {overlayLevel === 2 ? <ConsoleStepOverlay backgroundColor='rgba(0, 0, 0, 0.75)'>💥 initial synth 💥</ConsoleStepOverlay> : null}
+      {overlayLevel === 2 ? <ConsoleStepOverlay backgroundColor='rgba(0, 0, 0, 0.75)'>💥 initial synth 💥</ConsoleStepOverlay> : null} */}
 
       {/* --- Console Window --- */}
       <div className={`${styles.fullHeight}`}>

@@ -23,6 +23,9 @@ export class XSynth {
   private constructor() { }
 
   /** --- */
+  public static checkInstance() {
+    return !!XSynth.instance;
+  }
   public static getInstance(): XSynth {
     if (!XSynth.instance) {
       throw 'no synth instance';
