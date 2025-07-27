@@ -25,7 +25,7 @@ export const playStatusSlice = createSlice({
 
       if (action.payload === PlayStatusEN.COMPILE) startTime = new Date().getTime();
       if (action.payload === PlayStatusEN.PLAY) {
-        console.log('ctt:', (new Date().getTime() - startTime))
+        // console.log('ctt:', (new Date().getTime() - startTime))
         startTime = 0;
       }
 

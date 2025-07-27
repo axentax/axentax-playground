@@ -12,13 +12,13 @@ interface Props {
 export const ConsoleStepOverlay: React.FC<Props> = (props: Props) => {
 
   // electron及び開発時のみシンセの自動初期化
-  if (
-    (import.meta.env.DEV && props.onClick)
-    || PlatformConfiguration.Platform === Platform.electron
-  ) {
-    XSynth.initLocal(() => {})
-    return null;
-  }
+  // if (
+  //   (import.meta.env.DEV && props.onClick)
+  //   || PlatformConfiguration.Platform === Platform.electron
+  // ) {
+  //   XSynth.initLocal(() => {})
+  //   return null;
+  // }
 
   return (
     <>
