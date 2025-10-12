@@ -210,7 +210,7 @@ export const BaseFingerBoard: React.FC<Props> = React.memo((props: Props) => {
     <circle cx={targetFretLoc[2]} cy="69" r="6" textAnchor="middle" fill="#636363" />
     <circle cx={targetFretLoc[4]} cy="69" r="6" textAnchor="middle" fill="#636363" />
     <circle cx={targetFretLoc[6]} cy="69" r="6" textAnchor="middle" fill="#636363" />
-    <circle cx={targetFretLoc[9]} cy="69" r="6" textAnchor="middle" fill="#636363" />
+    <circle cx={targetFretLoc[8]} cy="69" r="6" textAnchor="middle" fill="#636363" />
     <circle cx={targetFretLoc[11]} cy="34" r="6" textAnchor="middle" fill="#636363" />
     <circle cx={targetFretLoc[11]} cy="104" r="6" textAnchor="middle" fill="#636363" />
     <circle cx={targetFretLoc[14]} cy="69" r="6" textAnchor="middle" fill="#636363" />

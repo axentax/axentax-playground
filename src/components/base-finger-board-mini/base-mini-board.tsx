@@ -77,7 +77,7 @@ export const BaseFingerBoardMini: React.FC<Props> = (props: Props) => {
         {/* fret mark */}
         {
           fretXs.map((_x, i) => {
-            if (i === 3 || i === 5 || i === 7 || i === 10 || i === 15 || i === 17 || i === 19 || i === 21 || i === 23) {
+            if (i === 3 || i === 5 || i === 7 || i === 9 || i === 15 || i === 17 || i === 19 || i === 21 || i === 23) {
               return (
                 <React.Fragment key={i}>
                   <circle
