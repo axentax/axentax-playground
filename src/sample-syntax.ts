@@ -1,4 +1,5 @@
-export const initialSyntax = `set.style.until: 1/3
+export const initialSyntax = `set.click.inst: 32 // 36 37 42
+set.style.until: 1/3
 set.style.scale: C major
 set.click.velocity: 18
 
